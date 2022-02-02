@@ -1,23 +1,24 @@
-const router = require("express").Router();
-const Users = require("./users-model.js");
 
+const router = require("express").Router()
 
-// function getAllUsers() { return db('users') }
+const User = require("./users-model.js")
 
-// async function insertUser(user) {
-//   // WITH POSTGRES WE CAN PASS A "RETURNING ARRAY" AS 2ND ARGUMENT TO knex.insert/update
-//   // AND OBTAIN WHATEVER COLUMNS WE NEED FROM THE NEWLY CREATED/UPDATED RECORD
-//   const [newUserObject] = await db('users').insert(user, ['user_id', 'username', 'password'])
-//   return newUserObject // { user_id: 7, username: 'foo', password: 'xxxxxxx' }
-// }
+const { restricted } = require('../auth/auth-middleware')
 
-router.get('/', async (req, res) => {
-    res.json(await Users.findAll())
+router.get("/", restricted, (req, res, next) => {
+    User.findAll()
+    .then(users => {
+      res.json(users)
+    })
+    .catch(next) 
+})
+
+router.get("/:id", restricted, (req, res, next) => {
+  User.findById(req.params.id)
+  .then(users => {
+    res.json(users)
   })
-  
-  router.post('/', async (req, res) => {
-    res.status(201).json(await insertUser(req.body))
-  })
-  
+  .catch(next) 
+})
 
-module.exports = router;
+module.exports = router

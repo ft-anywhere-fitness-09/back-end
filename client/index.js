@@ -1,6 +1,7 @@
 /* eslint-disable no-debugger */
 const usernameInput = document.querySelector('#usernameInput')
 const passwordInput = document.querySelector('#passwordInput')
+const roleInput = document.querySelector('#roleInput')
 const registerBtn = document.querySelector('#registerBtn')
 const loginBtn = document.querySelector('#loginBtn')
 const logoutBtn = document.querySelector('#logoutBtn')
@@ -13,6 +14,7 @@ const handle = action => evt => {
   const credentials = {
     username: usernameInput.value,
     password: passwordInput.value,
+    role: roleInput.value, 
   }
   fetch(`/api/auth/${action}`, {
     method: 'POST',
