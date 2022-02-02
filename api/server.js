@@ -17,6 +17,10 @@ server.use(express.json())
 server.use(helmet())
 server.use(cors())
 
+server.get('/hello', (req, res) => {
+  res.status(200).json('hello world!!!!!!')
+})
+
 server.get('/api/users', async (req, res) => {
   res.json(await getAllUsers())
 })
