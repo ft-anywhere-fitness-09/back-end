@@ -13,8 +13,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {data}
-        <h1>TEST 49</h1>
+        {/* {data} */}
+        <h1>TEST</h1>
       </header>
     </div>
   );
