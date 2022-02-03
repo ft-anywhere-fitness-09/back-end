@@ -13,7 +13,7 @@ router.post('/register',
     validateRole,    
     async(req, res, next)=>{
     let user = req.body
-    console.log("register user ",user)
+    // console.log("register user ",user)
     const hash = bcrypt.hashSync(user.password , BCRYPT_ROUNDS)
     user.password = hash
     User.add(user)
@@ -37,7 +37,10 @@ router.post('/register',
 })
 
 
-router.post('/login',async (req, res, next) => {
+router.post('/login',
+    validateCredentials, 
+    // checkUserValid, 
+    async (req, res, next) => {
     let { username, password } = req.body
   
     // User.findBy({ username })
@@ -60,7 +63,7 @@ router.post('/login',async (req, res, next) => {
          return next({ status: 401, message: "Invalid credentials"})
         }
         req.user = user
-        console.log(user)
+        // console.log(user)
         const token = makeToken(user)
         res.status(200).json({ message: `Welcome ${user.username}!`, token})
       } catch (err) {
