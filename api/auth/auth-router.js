@@ -10,7 +10,7 @@ const { validateCredentials, checkUserValid, checkUsernameTaken, validateRole } 
 router.post('/register', 
     validateCredentials,
     checkUsernameTaken,
-    validateRole,    
+    // validateRole,    
     async(req, res, next)=>{
     let user = req.body
     // console.log("register user ",user)

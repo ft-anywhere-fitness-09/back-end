@@ -17,9 +17,9 @@ server.use(cors())
 server.use('/api/auth', authRouter)
 server.use("/api/users", usersRouter);
 
-server.use(express.static(path.join(__dirname, '../client')))
+server.use(express.static(path.join(__dirname, 'client/build')))
 server.get('/', (req, res)=>{
-  res.sendFile(path.join(__dirname, '../client', 'index.html'))
+  res.sendFile(path.join(__dirname, 'client', 'index.html'))
 })
 
 server.get('/hello', (req, res) => {

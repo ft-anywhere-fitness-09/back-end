@@ -5,7 +5,9 @@ const User = require("./users-model.js")
 
 const { restricted } = require('../auth/auth-middleware')
 
-router.get("/", restricted, (req, res, next) => {
+router.get("/", 
+  // restricted, 
+  (req, res, next) => {
     User.findAll()
     .then(users => {
       res.json(users)
