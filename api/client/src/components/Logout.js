@@ -9,13 +9,13 @@ const Logout = (props)=> {
     const {fetchStart} = props
     useEffect(()=> {
         const token = localStorage.getItem("token");
-        // axios.post('http://localhost:9000/api/logout', {}, {
+        // axios.post('http://localhost:9000/api/auth/logout', {}, {
         //     headers:{
         //         authorization: localStorage.getItem('token')
         //     }
         // })
         axiosWithAuth()
-        .post(`/logout`)
+        .post(`/auth/logout`)
         .then(resp => {
                 localStorage.removeItem('token');
                 fetchStart()

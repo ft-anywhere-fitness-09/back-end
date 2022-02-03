@@ -27,13 +27,13 @@ const Login = (props) => {
     const login = e => {
         e.preventDefault();
         // console.log("login")
-        axios.post('http://localhost:9000/api/login', value)
+        axios.post('http://localhost:9000/api/auth/login', value)
         .then(resp=> {
         //   console.log(resp);
           const { token } = resp.data;
           localStorage.setItem("token", token);
           fetchSuccess()
-          props.history.push('/friends');
+          props.history.push('/users');
         })
         .catch(err => {
           console.log(err);
