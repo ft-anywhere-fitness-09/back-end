@@ -14,34 +14,26 @@
     {
         "user_id": 1,
         "username": "robert",
-        "password": "1234",
-        "role_id": 1,
-        "created_at": "2022-02-02T16:42:17.187Z",
-        "updated_at": "2022-02-02T16:42:17.187Z"
+        "password": "$2a$08$Ib0hdcZKmR81bf/lDBtmSu2BWV7pfZ91STodHGO4.nsHkZT/4pZ/C",//1234
+        "role_type": "instructor"
     },
     {
         "user_id": 2,
         "username": "tom",
-        "password": "1234",
-        "role_id": 1,
-        "created_at": "2022-02-02T16:42:17.187Z",
-        "updated_at": "2022-02-02T16:42:17.187Z"
+        "password": "$2a$08$Ib0hdcZKmR81bf/lDBtmSu2BWV7pfZ91STodHGO4.nsHkZT/4pZ/C",//1234
+        "role_type": "instructor"
     },
     {
         "user_id": 3,
         "username": "jimmy",
-        "password": "1234",
-        "role_id": 2,
-        "created_at": "2022-02-02T16:42:17.187Z",
-        "updated_at": "2022-02-02T16:42:17.187Z"
+        "password": "$2a$08$Ib0hdcZKmR81bf/lDBtmSu2BWV7pfZ91STodHGO4.nsHkZT/4pZ/C",//1234
+        "role_type": "client"
     },
     {
         "user_id": 4,
         "username": "susan",
-        "password": "1234",
-        "role_id": 2,
-        "created_at": "2022-02-02T16:42:17.187Z",
-        "updated_at": "2022-02-02T16:42:17.187Z"
+        "password": "$2a$08$Ib0hdcZKmR81bf/lDBtmSu2BWV7pfZ91STodHGO4.nsHkZT/4pZ/C",//1234
+        "role_type": "client"
     },
 ]
 
