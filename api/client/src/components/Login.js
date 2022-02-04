@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { fetchSuccess} from '../actions'
@@ -11,7 +10,6 @@ const Login = (props) => {
         role: ''
     }
     const [value, setValue] = useState(initatate)
-    const {push} = useHistory()
     const {fetchSuccess} = props
 
     const handleChange = (e) => {
@@ -27,7 +25,8 @@ const Login = (props) => {
     const login = e => {
         e.preventDefault();
         // console.log("login")
-        axios.post('http://localhost:9000/api/auth/login', value)
+        // axios.post('http://localhost:9000/api/auth/login', value)
+        axios.post('https://ft-anywhere-fitness-09.herokuapp.com/api/auth/login', value)
         .then(resp=> {
         //   console.log(resp);
           const { token } = resp.data;
