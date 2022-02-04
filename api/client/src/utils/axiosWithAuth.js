@@ -7,8 +7,8 @@ const axiosWithAuth = () => {
         headers: {
             authorization: token
         },
-        baseURL: "http://localhost:9000/api"
-        // baseURL: "https://ft-anywhere-fitness-09.herokuapp.com/api"
+        // baseURL: "http://localhost:9000/api"
+        baseURL: "https://ft-anywhere-fitness-09.herokuapp.com/api"
     })
 }
 
