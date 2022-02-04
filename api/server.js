@@ -6,6 +6,7 @@ const path = require('path')
 
 const authRouter = require('./auth/auth-router.js')
 const usersRouter = require("./users/users-router.js");
+const classesRouter = require("./classes/classes-router")
 
 
 
@@ -16,6 +17,7 @@ server.use(cors())
 
 server.use('/api/auth', authRouter)
 server.use("/api/users", usersRouter);
+server.use('/api/classes', classesRouter)
 
 server.use(express.static(path.join(__dirname, 'client/build')))
 server.get('/', (req, res)=>{
