@@ -24,8 +24,8 @@ const Signup = (props) => {
     const handleSubmit = e => {
         e.preventDefault();
         // console.log("handleSubmit")
-        axios.post('http://localhost:9000/api/auth/register', value)
-        // axios.post('https://ft-anywhere-fitness-09.herokuapp.com/api/auth/register', value)
+        // axios.post('http://localhost:9000/api/auth/register', value)
+        axios.post('https://ft-anywhere-fitness-09.herokuapp.com/api/auth/register', value)
         .then(resp=> {
         //   console.log(resp);
           // const { token } = resp.data;
